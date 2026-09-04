@@ -1,1 +1,318 @@
-Hola Alex
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Página profesional de Lexander Amin Caceres Baez, desarrollador de software junior especializado en Java y Spring Boot.">
+	<title>Lexander Amin Caceres Baez | Java &amp; Spring Boot</title>
+	<style>
+		:root {
+			--ink: #17202a;
+			--muted: #66727e;
+			--paper: #f7f8f4;
+			--white: #ffffff;
+			--lime: #d8f36a;
+			--orange: #ff7849;
+			--line: #dfe4df;
+			--shadow: 0 18px 45px rgba(23, 32, 42, 0.1);
+		}
+
+		* { box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: var(--paper);
+			font-family: Georgia, 'Times New Roman', serif;
+			line-height: 1.6;
+		}
+
+		.wrap {
+			width: min(1120px, calc(100% - 40px));
+			margin: 0 auto;
+		}
+
+		header {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			width: 100%;
+			padding: 26px 0;
+		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-family: Arial, sans-serif;
+		}
+
+		.brand {
+			color: var(--white);
+			font-size: 1.15rem;
+			font-weight: 800;
+			letter-spacing: 0.06em;
+			text-decoration: none;
+		}
+
+		nav { display: flex; gap: 28px; }
+
+		nav a {
+			color: rgba(255, 255, 255, 0.82);
+			font-size: 0.85rem;
+			text-decoration: none;
+		}
+
+		nav a:hover, nav a:focus { color: var(--lime); }
+
+		.hero {
+			position: relative;
+			min-height: 680px;
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+			color: var(--white);
+			background:
+				linear-gradient(115deg, rgba(13, 30, 39, 0.96), rgba(24, 56, 65, 0.86)),
+				url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85') center / cover;
+		}
+
+		.hero::after {
+			content: '';
+			position: absolute;
+			right: -110px;
+			bottom: -180px;
+			width: 500px;
+			height: 500px;
+			border: 1px solid rgba(216, 243, 106, 0.35);
+			border-radius: 50%;
+			box-shadow: 0 0 0 50px rgba(216, 243, 106, 0.04), 0 0 0 100px rgba(216, 243, 106, 0.04);
+		}
+
+		.hero-content { position: relative; z-index: 1; max-width: 730px; }
+
+		.eyebrow {
+			display: inline-block;
+			margin-bottom: 18px;
+			color: var(--lime);
+			font: 700 0.75rem/1 Arial, sans-serif;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+		}
+
+		h1, h2, h3, p { margin-top: 0; }
+
+		h1 {
+			max-width: 760px;
+			margin-bottom: 24px;
+			font-size: clamp(3.3rem, 8vw, 7.5rem);
+			line-height: 0.9;
+			letter-spacing: -0.04em;
+		}
+
+		.hero-copy {
+			max-width: 520px;
+			margin-bottom: 34px;
+			color: rgba(255, 255, 255, 0.74);
+			font-size: 1.15rem;
+		}
+
+		.button {
+			display: inline-block;
+			padding: 14px 20px;
+			color: var(--ink);
+			background: var(--lime);
+			font: 700 0.82rem Arial, sans-serif;
+			text-decoration: none;
+			transition: transform 180ms ease, box-shadow 180ms ease;
+		}
+
+		.button:hover, .button:focus { transform: translateY(-3px); box-shadow: 0 9px 18px rgba(216, 243, 106, 0.2); }
+
+		section { padding: 100px 0; }
+
+		.section-heading {
+			display: grid;
+			grid-template-columns: minmax(190px, 0.65fr) 1fr;
+			gap: 50px;
+			margin-bottom: 55px;
+		}
+
+		.section-number { color: var(--orange); font: 700 0.8rem Arial, sans-serif; letter-spacing: 0.12em; }
+
+		h2 { margin-bottom: 0; font-size: clamp(2.3rem, 5vw, 4.6rem); line-height: 0.98; letter-spacing: -0.035em; }
+
+		.intro { max-width: 570px; color: var(--muted); font-size: 1.08rem; }
+
+		.about { background: var(--white); }
+
+		.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+
+		.profile-card {
+			position: relative;
+			min-height: 470px;
+			overflow: hidden;
+			background: var(--ink);
+			box-shadow: var(--shadow);
+		}
+
+		.profile-card img {
+			display: block;
+			width: 100%;
+			height: 470px;
+			object-fit: cover;
+			object-position: center;
+			transition: transform 500ms ease;
+		}
+
+		.profile-card:hover img { transform: scale(1.04); }
+
+		.profile-caption {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding: 28px;
+			color: var(--white);
+			background: linear-gradient(transparent, rgba(23, 32, 42, 0.92));
+		}
+
+		.profile-caption span {
+			display: block;
+			margin-bottom: 8px;
+			color: var(--lime);
+			font: 700 0.7rem Arial, sans-serif;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+		}
+
+		.profile-caption strong { display: block; font-size: 1.55rem; }
+		.profile-caption small { color: rgba(255, 255, 255, 0.76); font: 0.85rem Arial, sans-serif; }
+
+		.about-text p { max-width: 560px; color: var(--muted); font-size: 1.1rem; }
+
+		.facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 35px; }
+		.fact { border-top: 2px solid var(--ink); padding-top: 12px; }
+		.fact strong { display: block; font-size: 1.15rem; }
+		.fact span { color: var(--muted); font: 0.82rem Arial, sans-serif; }
+
+		.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+		.skill { min-height: 210px; padding: 28px; background: var(--paper); }
+		.skill-index { color: var(--orange); font: 700 0.75rem Arial, sans-serif; }
+		.skill h3 { margin: 36px 0 10px; font-size: 1.35rem; }
+		.skill p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+		.contact { background: var(--orange); }
+		.contact .section-number { color: var(--ink); }
+		.contact h2 { max-width: 700px; }
+		.contact-copy { max-width: 520px; margin: 28px 0; font-size: 1.1rem; }
+		.contact .button { background: var(--ink); color: var(--white); }
+
+		footer { padding: 25px 0; background: var(--ink); color: rgba(255, 255, 255, 0.62); font: 0.78rem Arial, sans-serif; }
+		.footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+
+		@media (max-width: 760px) {
+			.wrap { width: min(100% - 28px, 560px); }
+			header { padding: 20px 0; }
+			nav { gap: 12px; }
+			nav a { font-size: 0.72rem; }
+			.hero { min-height: 620px; }
+			section { padding: 70px 0; }
+			.section-heading, .about-grid { grid-template-columns: 1fr; gap: 25px; }
+			.skills-grid { grid-template-columns: 1fr 1fr; }
+			.skill { min-height: 190px; padding: 20px; }
+			.skill h3 { margin-top: 25px; font-size: 1.1rem; }
+			.footer-inner { flex-direction: column; gap: 5px; }
+		}
+
+		@media (max-width: 420px) {
+			nav a:nth-child(1) { display: none; }
+			.skills-grid { grid-template-columns: 1fr; }
+			.facts { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="wrap nav">
+			<a class="brand" href="#inicio">LEXANDER.</a>
+			<nav aria-label="Navegación principal">
+				<a href="#sobre-mi">Sobre mí</a>
+				<a href="#conocimientos">Conocimientos</a>
+				<a href="#contacto">Contacto</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero" id="inicio">
+			<div class="wrap hero-content">
+				<span class="eyebrow">Desarrollador de Software Junior</span>
+				<h1>Lexander<br>Caceres Baez.</h1>
+				<p class="hero-copy">Desarrollador en formación especializado en Java y Spring Boot, con interés en crear aplicaciones web funcionales, ordenadas y útiles.</p>
+				<a class="button" href="#conocimientos">Conoce mi perfil &rarr;</a>
+			</div>
+		</section>
+
+		<section class="about" id="sobre-mi">
+			<div class="wrap">
+				<div class="section-heading">
+					<span class="section-number">01 / SOBRE MÍ</span>
+					<h2>Aprender.<br>Construir.<br>Mejorar.</h2>
+				</div>
+				<div class="about-grid">
+					<div class="profile-card">
+						<img src="imagenes/perro.jpg" alt="Perro de compañía en el interior de un vehículo">
+						<div class="profile-caption">
+							<span>Tarjeta de presentación</span>
+							<strong>Lexander Amin Caceres Baez</strong>
+							<small>Desarrollador de Software Junior</small>
+						</div>
+					</div>
+					<div class="about-text">
+						<p>Desarrollador en formación con conocimientos en <strong>Java, Spring Boot, SQL/MySQL, HTML, CSS y Git</strong>, orientado al desarrollo de aplicaciones web y backend.</p>
+						<p>Cuento con formación en desarrollo de software y bases de datos, además de experiencia laboral en atención al cliente, gestión de cambios, devoluciones y garantías. Me caracterizo por ser responsable, organizado y tener disposición para aprender y trabajar en equipo.</p>
+						<div class="facts">
+							<div class="fact"><strong>Ubicación</strong><span>Saltos del Guairá, Paraguay</span></div>
+							<div class="fact"><strong>Objetivo</strong><span>Primera oportunidad profesional</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="conocimientos">
+			<div class="wrap">
+				<div class="section-heading">
+					<span class="section-number">02 / CONOCIMIENTOS</span>
+					<div><h2>Conocimientos<br>técnicos.</h2><p class="intro">Tecnologías, herramientas y conceptos que forman parte de mi preparación para el desarrollo de aplicaciones web y backend.</p></div>
+				</div>
+				<div class="skills-grid">
+					<article class="skill"><span class="skill-index">01</span><h3>Java</h3><p>Programación orientada a objetos y construcción de soluciones backend.</p></article>
+					<article class="skill"><span class="skill-index">02</span><h3>Spring Boot</h3><p>Desarrollo de aplicaciones y servicios backend con el ecosistema Spring.</p></article>
+					<article class="skill"><span class="skill-index">03</span><h3>SQL &amp; MySQL</h3><p>Consultas y trabajo con bases de datos relacionales.</p></article>
+					<article class="skill"><span class="skill-index">04</span><h3>HTML &amp; CSS</h3><p>Maquetación de interfaces web claras, semánticas y adaptables.</p></article>
+					<article class="skill"><span class="skill-index">05</span><h3>Git</h3><p>Control de versiones para organizar y seguir la evolución del código.</p></article>
+					<article class="skill"><span class="skill-index">06</span><h3>MVC &amp; APIs REST</h3><p>Conceptos de arquitectura y comunicación entre aplicaciones web.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact" id="contacto">
+			<div class="wrap">
+				<span class="section-number">03 / CONTACTO</span>
+				<h2>Hablemos de<br>lo que sigue.</h2>
+				<p class="contact-copy">Busco mi primera oportunidad profesional en el área de desarrollo de software para aplicar mis conocimientos y continuar creciendo como programador.</p>
+				<p><strong>Saltos del Guairá, Paraguay</strong><br><a href="tel:+595986522495">0986 522 495</a><br><a href="mailto:caceresalex2912@gmail.com">caceresalex2912@gmail.com</a></p>
+				<a class="button" href="mailto:caceresalex2912@gmail.com">Escríbeme &rarr;</a>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="wrap footer-inner"><span>© 2026 Lexander Amin Caceres Baez</span><span>Java &amp; Spring Boot</span></div>
+	</footer>
+</body>
+</html>
